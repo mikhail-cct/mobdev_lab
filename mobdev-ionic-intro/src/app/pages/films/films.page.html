@@ -1,9 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>films</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Films</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item button detail lines="@inset" *ngFor="let film of (films | async)?.results" (click)="openDetails(film)">	
+      {{ film.title }}</ion-item>
+  </ion-list>
 </ion-content>

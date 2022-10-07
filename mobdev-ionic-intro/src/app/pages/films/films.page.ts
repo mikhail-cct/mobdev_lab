@@ -21,6 +21,6 @@ export class FilmsPage implements OnInit {
   openDetails(film){
     let split = film.url.split('/');
     let filmId = split[split.length-2];
-    this.router.navigateByUrl(`/tab/films/${filmId}`);
+    this.router.navigateByUrl(`/tabs/films/${filmId}`);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-films',
@@ -12,10 +12,10 @@ export class FilmsPage implements OnInit {
 
   films: Observable<any>;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
-    this.films = this.http.get('https://swapi.dev/api/films');
+    this.films = this.api.getFilms();
   }
 
   openDetails(film){

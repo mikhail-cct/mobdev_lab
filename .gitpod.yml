@@ -1,0 +1,3 @@
+tasks:
+  - name: Install Ionic & Angular CLI
+    command: npm i -D -E @angular/cli && npx --yes ionic serve
